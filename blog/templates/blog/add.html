@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<h3>Add Post</h3>
+
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <form method = "POST">
+                {% csrf_token %}
+                <label class="">Post Title:</label>
+                <input type="text" name="title"></input>
+                <label for="">Content:</label>
+                <input type="textarea" name="post"></input>
+                <button type="submit">Add New Post</button>
+            </form>
+        </div>
+    </div>
+
+</article>
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<h3>Update</h3>
+
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ post.author }}</a>
+            <small class="text-muted">{{ post.date_posted }}</small>
+        </div>
+        <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+        <p class="article-content">{{ post.content }}</p>
+    </div>
+
+    <form method = "POST">
+        {% csrf_token %}
+        <label class="">Edit title:</label>
+        <input type="text" name="title"></input>
+        <label for="">Edit Post:</label>
+        <input type="textarea" name="post" height="5" width="40"></input>
+        <button type="submit">Update</button>
+
+    </form>
+</article>
+{% comment %}
+{% for post in posts %}
+    {% endfor %}
+    {% endcomment %}
+{% endblock content %}
